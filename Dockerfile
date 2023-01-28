@@ -9,17 +9,18 @@ WORKDIR /app
 
 COPY . .
 
-# install node.js 18
-RUN \
-  curl -fsSL https://deb.nodesource.com/setup_18.x | bash - &&\
-  apt-get install --no-install-recommends -y nodejs
-
 # install intel-gpu-tools
 RUN \
     apt-get -qq update \
     && \
     apt-get install --no-install-recommends -y \
         intel-gpu-tools \
+        curl
+
+# install node.js 18
+RUN \
+    curl -fsSL https://deb.nodesource.com/setup_18.x | bash - &&\
+    apt-get install --no-install-recommends -y nodejs \
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
     && apt-get autoremove -y \
     && apt-get clean \
