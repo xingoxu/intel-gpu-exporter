@@ -24,6 +24,9 @@ const requestListener = function (req, res) {
       res.end(`# HELP intel_gpu_render_busy_percent Render busy utilisation in %
 # TYPE intel_gpu_render_busy_percent summary
 intel_gpu_render_busy_percent ${gpuStatics["engines"]["Render/3D/0"]["busy"]}
+# HELP intel_gpu_blitter_busy_percent Blitter busy utilisation in %
+# TYPE intel_gpu_blitter_busy_percent summary
+intel_gpu_blitter_busy_percent ${gpuStatics["engines"]["Blitter/0"]["busy"]}
 # HELP intel_gpu_video_busy_percent Video busy utilisation in %
 # TYPE intel_gpu_video_busy_percent summary
 intel_gpu_video_busy_percent ${gpuStatics["engines"]["Video/0"]["busy"]}
