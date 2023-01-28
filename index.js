@@ -19,7 +19,6 @@ intel_gpu_top.on('close', (code) => {
 
 const requestListener = function (req, res) {
   res.writeHead(200);
-  console.log(gpuStatics);
   switch (req.url) {
     case '/metrics':
       res.end(`# HELP intel_gpu_render_busy_percent Render busy utilisation in %
