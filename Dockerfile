@@ -7,8 +7,6 @@ ENV \
 
 WORKDIR /app
 
-COPY . .
-
 # install intel-gpu-tools
 RUN \
     apt-get -qq update \
@@ -31,6 +29,8 @@ RUN \
         /var/lib/apt/lists/* \
         /var/cache/apt/* \
         /var/tmp/*
+
+COPY . .
 
 ENTRYPOINT ["node", "/app/index.js"]
 
