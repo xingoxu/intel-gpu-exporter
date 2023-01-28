@@ -15,7 +15,8 @@ RUN \
     && \
     apt-get install --no-install-recommends -y \
         intel-gpu-tools \
-        curl
+        curl \
+        ca-certificates
 
 # install node.js 18
 RUN \
