@@ -1,6 +1,6 @@
 # intel-gpu-exporter
 
-Get metrics from Intel GPUs
+Get metrics from Intel GPUs for Prometheus metrics
 
 ## Deployment
 
